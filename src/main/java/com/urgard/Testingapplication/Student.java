@@ -6,6 +6,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Getter
@@ -31,7 +34,10 @@ public class Student {
             strategy = GenerationType.SEQUENCE
     )
     private Long id;
+    @NotBlank //Validation (for controller) => not blank, not null
     private String name;
+    @Email //Validation (for controller) => is email
     private String email;
+    @NotNull //Validation
     private Gender gender;
 }
