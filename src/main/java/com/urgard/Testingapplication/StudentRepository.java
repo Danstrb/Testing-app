@@ -1,4 +1,4 @@
-package com.urgard.Testingapplication.Repo;
+package com.urgard.Testingapplication;
 
 import com.urgard.Testingapplication.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
