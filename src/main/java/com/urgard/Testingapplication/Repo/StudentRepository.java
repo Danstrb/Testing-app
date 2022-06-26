@@ -1,5 +1,6 @@
 package com.urgard.Testingapplication.Repo;
 
+import com.urgard.Testingapplication.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
