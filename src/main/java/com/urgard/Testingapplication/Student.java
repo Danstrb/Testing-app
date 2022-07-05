@@ -16,23 +16,16 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Student {
-
-    public Student (String name, String email, Gender gender) {
-        this.name = name;
-        this.email = email;
-        this.gender = gender;
-    }
-
-    @Id
     @SequenceGenerator (
             name = "student_sequence",
             sequenceName = "student_sequence",
             allocationSize = 1
     )
     @GeneratedValue (
-            generator = "student_sequence",
-            strategy = GenerationType.SEQUENCE
+            strategy = GenerationType.SEQUENCE,
+            generator = "student_sequence"
     )
+    @Id
     private Long id;
     @NotBlank //Validation (for controller) => not blank, not null
     private String name;
@@ -40,4 +33,10 @@ public class Student {
     private String email;
     @NotNull //Validation
     private Gender gender;
+
+    public Student (String name, String email, Gender gender) {
+        this.name = name;
+        this.email = email;
+        this.gender = gender;
+    }
 }
