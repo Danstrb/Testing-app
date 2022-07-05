@@ -7,7 +7,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/v1/students/")
+@RequestMapping("/api/v1/students")
 @AllArgsConstructor
 public class StudentController {
     private StudentService studentService;
@@ -26,5 +26,4 @@ public class StudentController {
     public void deleteStudent(@PathVariable("{studentId}") Long studentId) { //is @PathVariable necessary? -> test it
         studentService.deleteStudent(studentId);
     }
-
 }
