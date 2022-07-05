@@ -22,8 +22,8 @@ public class StudentController {
         studentService.addStudent(student);
     }
 
-    @DeleteMapping("{studentId}")
-    public void deleteStudent(@PathVariable("{studentId}") Long studentId) { //is @PathVariable necessary? -> test it
+    @DeleteMapping("/{studentId}")
+    public void deleteStudent(@PathVariable("studentId") Long studentId) {
         studentService.deleteStudent(studentId);
     }
 }
