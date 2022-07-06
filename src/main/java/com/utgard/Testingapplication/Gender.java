@@ -1,4 +1,4 @@
-package com.urgard.Testingapplication;
+package com.utgard.Testingapplication;
 
 public enum Gender {
     MALE,

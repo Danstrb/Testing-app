@@ -1,4 +1,4 @@
-package com.urgard.Testingapplication;
+package com.utgard.Testingapplication;
 
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
