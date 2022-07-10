@@ -1,5 +1,7 @@
 package com.utgard.Testingapplication;
 
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -12,8 +14,13 @@ class StudentRepositoryTest {
     @Autowired
     private StudentRepository underTest;
 
+    @AfterEach
+    void tearDown() {
+        underTest.deleteAll();
+    }
+
     @Test
-    void itShouldCheckIfStudentExistsEmail() {
+    void itShouldCheckIfStudentEmailExists() {
         // given
         String email = "john@john.com";
         Student student = new Student(
@@ -28,5 +35,17 @@ class StudentRepositoryTest {
 
         // then
         assertThat(exists).isTrue();
+    }
+
+    @Test
+    void itShouldCheckIfStudentEmailDoesNotExist() {
+        // given
+        String email = "robert@gmail.com";
+
+        // when
+        boolean exists = underTest.selectExistsEmail(email);
+
+        // then
+        assertThat(exists).isFalse();
     }
 }
