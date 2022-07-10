@@ -24,7 +24,7 @@ public class StudentService {
     public void deleteStudent(Long id) {
         var studentExists = studentRepository.existsById(id);
         if (!studentExists)
-            throw new NullPointerException("Student with id " + id +"does not exists");
+            throw new IllegalArgumentException("Student with id " + id + " does not exists");
         studentRepository.deleteById(id);
     }
 }
